@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/routing"
+    app:startDestination="@id/fragmentCharacters">
+
+    <fragment
+        android:id="@+id/fragmentCharacters"
+        android:name="com.example.nav_sample.CharactersFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentLocations"
+        android:name="com.example.nav_sample.LocationsFragment"/>
+
+    <fragment
+        android:id="@+id/fragmentEpisodes"
+        android:name="com.example.nav_sample.EpisodesFragment"/>
+
+</navigation>
