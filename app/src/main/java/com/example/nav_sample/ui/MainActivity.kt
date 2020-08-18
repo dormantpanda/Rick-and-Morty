@@ -1,16 +1,10 @@
-package com.example.nav_sample
+package com.example.nav_sample.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.nav_sample.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupBottomNavigationView() {
         bottomBar.setupWithNavController(
-            Navigation.findNavController(this, R.id.navigationController))
+            Navigation.findNavController(this,
+                R.id.navigationController
+            ))
     }
 }
