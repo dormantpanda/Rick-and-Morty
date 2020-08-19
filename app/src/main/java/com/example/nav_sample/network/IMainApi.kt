@@ -12,13 +12,13 @@ import retrofit2.http.Query
 interface IMainApi {
 
     @GET(CHARACTERS_PATH)
-    fun getCharacters(@Query("page") page : Int): Single<CharacterResponse>
+    fun getCharacters(@Query("page") page : Int): Observable<CharacterResponse>
 
     @GET(LOCATIONS_PATH)
-    fun getLocations(): Observable<LocationResponse>
+    fun getLocations(@Query("page") page : Int): Observable<LocationResponse>
 
     @GET(EPISODES_PATH)
-    fun getEpisodes(): Observable<EpisodeResponse>
+    fun getEpisodes(@Query("page") page : Int): Observable<EpisodeResponse>
 
     companion object{
         const val CHARACTERS_PATH = "character/"

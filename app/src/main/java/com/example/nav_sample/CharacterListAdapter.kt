@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.nav_sample.models.characters.Character
 import kotlinx.android.synthetic.main.item_character.view.*
 
-class CharacterListAdapter : PagedListAdapter<Character, RecyclerView.ViewHolder>(CHARACTER_COMPARATOR){
+class CharacterListAdapter : PagedListAdapter<Character, CharacterListAdapter.CharacterItemViewHolder>(CHARACTER_COMPARATOR){
 
     class CharacterItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
@@ -45,14 +45,8 @@ class CharacterListAdapter : PagedListAdapter<Character, RecyclerView.ViewHolder
         return CharacterItemViewHolder(view)
     }
 
-//    override fun onBindViewHolder(holder: CharacterItemViewHolder, position: Int) {
-//        val character = getItem(position)
-//        character?.let { holder.bind(character) }
-//    }
-
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CharacterItemViewHolder, position: Int) {
         val character = getItem(position)
-        character?.let { (holder as CharacterItemViewHolder).bind(character) }
+        character?.let { holder.bind(character) }
     }
-
 }

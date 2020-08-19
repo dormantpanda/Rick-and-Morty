@@ -24,7 +24,7 @@ data class Character (
 
     var image: String? = null,
 
-    var episode: List<Episode>? = null,
+    var episode: List<String>? = null,
 
     var url: String? = null,
 

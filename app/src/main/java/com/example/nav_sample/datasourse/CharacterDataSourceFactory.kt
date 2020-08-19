@@ -9,7 +9,6 @@ class CharacterDataSourceFactory : DataSource.Factory<Int, Character>() {
     val characterLiveDataSource = MutableLiveData<CharacterDataSource>()
 
     override fun create(): DataSource<Int, Character> {
-
         val characterDataSource = CharacterDataSource()
         characterLiveDataSource.postValue(characterDataSource)
 

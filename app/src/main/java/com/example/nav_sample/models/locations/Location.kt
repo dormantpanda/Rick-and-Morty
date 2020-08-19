@@ -2,19 +2,19 @@ package com.example.nav_sample.models.locations
 
 import com.example.nav_sample.models.characters.Character
 
-class Location {
+data class Location (
 
-    var id: Int? = null
+    var id: Int? = null,
 
-    var name: String? = null
+    var name: String? = null,
 
-    var type: String? = null
+    var type: String? = null,
 
-    var dimension: String? = null
+    var dimension: String? = null,
 
-    var residents: List<Character>? = null
+    var residents: List<String>? = null,
 
-    var url: String? = null
+    var url: String? = null,
 
     var created: String? = null
-}
+)
