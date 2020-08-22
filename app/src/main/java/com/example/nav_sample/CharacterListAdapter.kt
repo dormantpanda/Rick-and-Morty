@@ -3,6 +3,7 @@ package com.example.nav_sample
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -10,11 +11,19 @@ import com.bumptech.glide.Glide
 import com.example.nav_sample.models.characters.Character
 import kotlinx.android.synthetic.main.item_character.view.*
 
-class CharacterListAdapter : PagedListAdapter<Character, CharacterListAdapter.CharacterItemViewHolder>(CHARACTER_COMPARATOR){
+class CharacterListAdapter : PagedListAdapter<Character, CharacterListAdapter.CharacterItemViewHolder>(CHARACTER_COMPARATOR) {
+    var onItemClick: ((Character) -> Unit) = {}
 
-    class CharacterItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class CharacterItemViewHolder(
+        itemView: View,
+        private var onItemClick: ((Character) -> Unit)
+    ) : RecyclerView.ViewHolder(itemView){
 
         fun bind(character : Character){
+            itemView.setOnClickListener {
+                onItemClick.invoke(character)
+            }
+
             itemView.tvCharacterName.text = character.name
             itemView.tvCharacterSpecies.text = character.species
 
@@ -42,11 +51,12 @@ class CharacterListAdapter : PagedListAdapter<Character, CharacterListAdapter.Ch
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_character, parent, false)
 
-        return CharacterItemViewHolder(view)
+        return CharacterItemViewHolder(view, onItemClick)
     }
 
     override fun onBindViewHolder(holder: CharacterItemViewHolder, position: Int) {
         val character = getItem(position)
         character?.let { holder.bind(character) }
     }
+
 }
