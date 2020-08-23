@@ -60,7 +60,7 @@ class RemoteRepository(
     }
 
     fun getEpisodesById(path: String) : List<Episode>{
-        val call = ApiClient.instance.mainApi.getEpisodesById(path)
+        val call = api.getEpisodesById(path)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 
