@@ -9,18 +9,26 @@
         android:id="@+id/tvLocationName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        style="@style/PrimaryTextView"
         />
 
     <TextView
         android:id="@+id/tvLocationType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        style="@style/SecondaryTextView"
+        />
+
+    <View
+        android:id="@+id/vBorderLocations"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey"
         />
 
 </LinearLayout>

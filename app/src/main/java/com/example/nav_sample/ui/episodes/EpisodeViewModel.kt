@@ -7,13 +7,16 @@ import androidx.paging.PagedList
 import com.example.nav_sample.datasourse.EpisodeDataSource
 import com.example.nav_sample.datasourse.EpisodeDataSourceFactory
 import com.example.nav_sample.models.episodes.Episode
+import com.example.nav_sample.network.repository.RemoteRepository
 
-class EpisodeViewModel : ViewModel() {
+class EpisodeViewModel(
+    val repository: RemoteRepository
+) : ViewModel() {
 
     var episodePagedList : LiveData<PagedList<Episode>>
 
     init {
-        val itemDataSourceFactory = EpisodeDataSourceFactory()
+        val itemDataSourceFactory = EpisodeDataSourceFactory(repository)
 
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)

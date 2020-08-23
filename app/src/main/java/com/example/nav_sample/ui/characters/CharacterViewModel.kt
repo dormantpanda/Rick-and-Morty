@@ -7,14 +7,17 @@ import androidx.paging.PagedList
 import com.example.nav_sample.datasourse.CharacterDataSource
 import com.example.nav_sample.datasourse.CharacterDataSourceFactory
 import com.example.nav_sample.models.characters.Character
+import com.example.nav_sample.network.repository.RemoteRepository
 
 
-class CharacterViewModel : ViewModel() {
+class CharacterViewModel(
+    repository: RemoteRepository
+) : ViewModel() {
 
     var characterPagedList : LiveData<PagedList<Character>>
 
     init {
-        val itemDataSourceFactory = CharacterDataSourceFactory()
+        val itemDataSourceFactory = CharacterDataSourceFactory(repository)
 
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)

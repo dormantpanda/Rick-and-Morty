@@ -16,11 +16,11 @@
         android:id="@+id/tvCharacterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
         android:layout_marginTop="8dp"
         android:layout_marginStart="24dp"
         app:layout_constraintStart_toEndOf="@id/ivAvatarImage"
         app:layout_constraintTop_toTopOf="parent"
+        style="@style/PrimaryTextView"
         />
 
     <TextView
@@ -29,9 +29,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginStart="24dp"
-        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/ivAvatarImage"
         app:layout_constraintTop_toBottomOf="@id/tvCharacterName"
+        style="@style/SecondaryTextView"
+        />
+
+    <View
+        android:id="@+id/vBorderCharacters"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

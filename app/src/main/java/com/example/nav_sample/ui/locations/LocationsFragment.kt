@@ -8,19 +8,18 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nav_sample.LocationListAdapter
 import com.example.nav_sample.R
-import kotlinx.android.synthetic.main.fragment_characters.*
 import kotlinx.android.synthetic.main.fragment_locations.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LocationsFragment : Fragment(R.layout.fragment_locations) {
+
+    private val viewModel: LocationViewModel by viewModel()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = LocationListAdapter()
         rvLocationsList.layoutManager = LinearLayoutManager(requireContext())
-
-        val viewModel = ViewModelProviders.of(this)
-            .get(LocationViewModel::class.java)
-
         rvLocationsList.adapter = adapter
 
         viewModel.locationPagedList.observe(requireActivity(), Observer{

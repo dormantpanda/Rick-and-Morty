@@ -3,15 +3,15 @@
     <item
         android:id="@+id/fragmentCharacters"
         android:icon="@drawable/ic_characters"
-        android:title="First"/>
+        android:title="@string/bottom_button_label_characters"/>
 
     <item
         android:id="@+id/fragmentLocations"
         android:icon="@drawable/ic_locations"
-        android:title="Second"/>
+        android:title="@string/bottom_button_label_locations"/>
 
     <item
         android:id="@+id/fragmentEpisodes"
         android:icon="@drawable/ic_episodes"
-        android:title="Third"/>
+        android:title="@string/bottom_button_label_episodes"/>
 </menu>

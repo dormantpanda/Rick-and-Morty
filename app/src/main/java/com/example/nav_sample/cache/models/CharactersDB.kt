@@ -2,7 +2,6 @@ package com.example.nav_sample.cache.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.nav_sample.models.locations.Location
 
 @Entity(tableName = "characters")
 
