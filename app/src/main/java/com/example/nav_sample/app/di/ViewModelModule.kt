@@ -1,5 +1,6 @@
 package com.example.nav_sample.app.di
 
+import com.example.nav_sample.ui.character_info_episodes.CharacterEpisodesViewModel
 import com.example.nav_sample.ui.characters.CharacterViewModel
 import com.example.nav_sample.ui.episodes.EpisodeViewModel
 import com.example.nav_sample.ui.locations.LocationViewModel
@@ -10,4 +11,5 @@ val viewModelModule = module {
     viewModel { CharacterViewModel(get()) }
     viewModel { LocationViewModel(get()) }
     viewModel { EpisodeViewModel(get()) }
+    viewModel { CharacterEpisodesViewModel(get()) }
 }

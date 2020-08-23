@@ -3,4 +3,5 @@
     <string name="bottom_button_label_characters">Characters</string>
     <string name="bottom_button_label_locations">Locations</string>
     <string name="bottom_button_label_episodes">Episodes</string>
+    <string name="button_character_episodes_label">Episodes</string>
 </resources>

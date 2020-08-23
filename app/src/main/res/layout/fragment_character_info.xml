@@ -24,17 +24,6 @@
         />
 
     <TextView
-        android:id="@+id/tvCharacterStatusInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="32sp"
-        app:layout_constraintTop_toBottomOf="@id/ivCharacterAvatarInfo"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterNameInfo"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"
-        />
-
-    <TextView
         android:id="@+id/tvCharacterSpeciesInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,17 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginStart="24dp"
-        />
-
-    <TextView
-        android:id="@+id/tvCharacterTypeInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterStatusInfo"
-        app:layout_constraintStart_toEndOf="@id/tvCharacterSpeciesInfo"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
         />
 
     <TextView
@@ -78,15 +56,13 @@
         android:layout_marginStart="24dp"
         />
 
-    <TextView
-        android:id="@+id/tvCharacterEpisodesInfo"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btCharacterEpisodes"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacterLocationInfo"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="24dp"
+        android:text="@string/button_character_episodes_label"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

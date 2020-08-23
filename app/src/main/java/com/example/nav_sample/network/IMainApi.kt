@@ -1,12 +1,14 @@
 package com.example.nav_sample.network
 
 import com.example.nav_sample.models.characters.CharacterResponse
+import com.example.nav_sample.models.episodes.Episode
 import com.example.nav_sample.models.episodes.EpisodeResponse
 import com.example.nav_sample.models.locations.LocationResponse
 import io.reactivex.Observable
 import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface IMainApi {
@@ -19,6 +21,9 @@ interface IMainApi {
 
     @GET(EPISODES_PATH)
     fun getEpisodes(@Query("page") page : Int): Observable<EpisodeResponse>
+
+    @GET(EPISODES_PATH + "{idString}")
+    fun getEpisodesById(@Path("idString") path : String) : Observable<List<Episode>>
 
     companion object{
         const val CHARACTERS_PATH = "character/"

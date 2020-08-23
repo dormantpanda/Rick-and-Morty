@@ -24,7 +24,16 @@
 
     <fragment
         android:id="@+id/fragmentCharacterInfo"
-        android:name="com.example.nav_sample.ui.character_info.CharacterInfoFragment"/>
+        android:name="com.example.nav_sample.ui.character_info.CharacterInfoFragment">
+        <action
+            android:id="@+id/toCharacterEpisodes"
+            app:destination="@id/fragmentCharacterInfoEpisodes"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentCharacterInfoEpisodes"
+        android:name="com.example.nav_sample.ui.character_info_episodes.CharacterInfoEpisodesFragment" />
 
 
 </navigation>
